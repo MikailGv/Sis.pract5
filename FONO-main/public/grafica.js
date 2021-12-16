@@ -20,4 +20,9 @@ var socket = io.connect('http://localhost:5001', {'forceNew': true});
       } catch (error) {} 
 	   wavesurfer.loadBlob(blob);//cargando audio
   }); 
+
+      var wavesurfer = WaveSurfer.create({
+      container: document.querySelector('#wave'),
+      backend: 'MediaElement'
+   });
     
