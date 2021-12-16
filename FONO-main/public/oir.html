@@ -8,29 +8,9 @@
 	<title>PAGINA PARA ESCUCHAR COSAS</title>
 </head>
 <body> 
+	<h1>OBSERVACIÓN DE LA GRÁFICA Y AUDIO DEL FONOCARDIOGRAMA</h1>
   <div id="waveform"></div>	
+  <script src="./Recibir.js"></script>
   <audio></audio>
-  <script>
-  var socket = io.connect('http://localhost:5001', {'forceNew': true});
-   //graficado
-    var wavesurfer = WaveSurfer.create({
-    container: '#waveform',
-    waveColor: 'violet',
-    progressColor: 'purple'
-    });
-
-   socket.on('voice', function(arrayBuffer) {
-
-	   console.log("A llegado el audio");
-	   var blob = new Blob([arrayBuffer], { 'type' : 'audio/ogg; codecs=opus' });
-	   var audio = document.createElement('audio');
-	   audio.src = window.URL.createObjectURL(blob);
-
-	   audio.play(); 
-	   wavesurfer.loadBlob(blob);//cargando audio
-  }); 
-    
-  </script>
-
 </body>
 </html>
