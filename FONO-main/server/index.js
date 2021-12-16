@@ -19,9 +19,9 @@ app.use("/",express.static('public'));
 //app.use(express.static(path.join(__dirname,'public')));
 
 //Conectar y autenticar con la base de datos de mongoDb
-/*var mongo_uri ='mongodb:// /'; Conectar a la base de datos mongodb
+/*var mongo_uri ='mongodb:dev//localhost/5001'; Conectar a la base de datos mongodb
 
-mongoose.connect(mongo_uri, function(err){
+mongoose.connect(mongo_uri, (err) => {
   if (err) {
     throw err;
   }else{
@@ -29,11 +29,11 @@ mongoose.connect(mongo_uri, function(err){
   }
 })
 
-app.post('register', function(req,res){
+app.post('register', (req,res) => {
  const {username, password} = req.body;
 
  const user = new User({username, password});
- user.save( function(err){
+ user.save((err) => {
  	if (err) {
  		res.status(500).send('ERROR AL REGISTRAR USUARIO');
  	}else{
@@ -44,17 +44,17 @@ app.post('register', function(req,res){
 
 });
 
-app.post('/authenticate', function(req, res){
+app.post('/authenticate', (req, res) =>{
  const {username, password} = req.body;
 
- User.findOne({username}, function(err, user){
+ User.findOne({username}, (err, user) => {
    if(err){
    	res.status(500).send('ERROR AL AUTENTICAR USUARIO');
 
    }else if(!user){
     res.status(500).send('EL USUARIO NO EXISTE');
    }else{
-   	 user.isCorrectPassword(password, function(err, result) {
+   	 user.isCorrectPassword(password,(err, result) =>{
    	 	if(err) {
    	 		res.status(500).send('ERROR AL AUTENTICAR USUARIO');
    	 	}else if(result){
