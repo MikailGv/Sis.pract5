@@ -14,7 +14,10 @@ var socket = io.connect('http://localhost:5001', {'forceNew': true});
 	   var audio = document.createElement('audio');
 	   audio.src = window.URL.createObjectURL(blob);
 
-	   audio.play(); 
+      try {
+         audio.play();
+
+      } catch (error) {} 
 	   wavesurfer.loadBlob(blob);//cargando audio
   }); 
     
