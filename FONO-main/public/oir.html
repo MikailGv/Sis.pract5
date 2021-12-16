@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://unpkg.com/wavesurfer.js"></script>
+	<script src="socket.io/socket.io.js"></script>
+	<title>PAGINA PARA ESCUCHAR COSAS</title>
+</head>
+<body> 
+  <div id="waveform"></div>	
+  <audio></audio>
+  <script>
+  var socket = io.connect('http://localhost:5001', {'forceNew': true});
+   //graficado
+    var wavesurfer = WaveSurfer.create({
+    container: '#waveform',
+    waveColor: 'violet',
+    progressColor: 'purple'
+    });
+
+   socket.on('voice', function(arrayBuffer) {
+
+	   console.log("A llegado el audio");
+	   var blob = new Blob([arrayBuffer], { 'type' : 'audio/ogg; codecs=opus' });
+	   var audio = document.createElement('audio');
+	   audio.src = window.URL.createObjectURL(blob);
+
+	   audio.play(); 
+	   wavesurfer.loadBlob(blob);//cargando audio
+  }); 
+    
+  </script>
+
+</body>
+</html>
