@@ -3,8 +3,8 @@ var socket = io.connect('http://localhost:5001', {'forceNew': true});
    //graficado
     var wavesurfer = WaveSurfer.create({
     container: '#waveform',
-    waveColor: 'violet',
-    progressColor: 'purple'
+    waveColor: '#854442',
+    progressColor: '#854442'
     });
 
    socket.on('voice', function(arrayBuffer) {
