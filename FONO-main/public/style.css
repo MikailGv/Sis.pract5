@@ -10,6 +10,10 @@ body{
 	background-color :#906269;
 
 }
+.button{
+	color: #black;
+
+}
 .container{
 	background-color: #EFE9E1;
     font-family: 'Share Tech', sans-serif;
@@ -17,18 +21,34 @@ body{
 .logo{
    font-size:80px ;
    font-family: cursive;
-   font-weight: bold;
+   font-weight: bolder;
    text-align:center;
    color:#d6c7c7 ;
   
 }
 h1{
- text-align:left ;
+	font-family: fantasy;
+	font-weight:lighter ;
+ text-align:center;
+ font-size:200px ;
+
+}
+h2{
+	font-size:50px ;
+	font-family:fantasy ;
+	font-weight: bold;
+	text-align: center;
+
 }
 h3{
 background:#d6c7c7 ;
+font-size:20px ;
 }
-
+h5{
+	font-size:40px;
+	font-family: fantasy;
+	text-align: center;
+}
 nav{
 	width: 100%;
 	display: flex;
@@ -47,4 +67,7 @@ ul{
 .corazon{
  background-image:yes ;
 
+}
+.pie{
+	text-align: center;
 }
