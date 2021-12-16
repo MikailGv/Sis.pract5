@@ -1,7 +1,7 @@
 //Codigo para recibir sockets
-var socket = io.connect('localhost:5001', {'forceNew': true});
+var socket = io.connect('http://localhost:5001', {'forceNew': true});
 
-var socket = io.connect('http://89.223.39.121:5001', {'forceNew': true});
+//var socket = io.connect('http://89.223.39.121:5001', {'forceNew': true});
    //graficado
     var wavesurfer = WaveSurfer.create({
     container: '#waveform',
@@ -26,5 +26,5 @@ var socket = io.connect('http://89.223.39.121:5001', {'forceNew': true});
       var wavesurfer = WaveSurfer.create({
       container: document.querySelector('#wave'),
       backend: 'MediaElement'
-   });
+      });
     
