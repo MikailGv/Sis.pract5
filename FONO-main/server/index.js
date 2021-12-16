@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 //MongoDb
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
-const User = require('./user');
+//const User = require('./user');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
