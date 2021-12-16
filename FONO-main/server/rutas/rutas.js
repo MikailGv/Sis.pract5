@@ -2,7 +2,7 @@ const { Router } = require('express');
 const router = Router();
 
 router.get('/', (req,res) => {
-	res.redirect('index.html');
+	res.redirect('cliente.html');
 })
 
 module.exports = router;
